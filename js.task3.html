@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>jstask3</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<style>
+	.btn {
+		 width:110px;
+		 height: 40px;
+		 margin-left:10px;
+		 font-size: 22px;
+	}
+
+
+
+</style>
+
+
+
+
+<body>
+	 <div class="container">
+    	<div class="row">
+    		<div class="col-lg-12 col-md-12 col-sm-12 text-center">
+            <h2>MODERN CALCULATOR</h2>
+    	<form name="calculator">
+                <br>
+                
+     <input style="width: 480px;height: 40px;margin-left: 10px;text-align: right;font-size:20px;" type="text" name="display" id="display" value="" size="28" maxlength="25">
+
+       <br>
+       <br>
+
+     <div class="col-lg-12 col-md-12 col-sm-12 text-center">
+       <input type="submit" id="clearMenu" id="btn" class="btn btn dark" value="C" onclick="runClearMenu()">
+
+       <input type="button" id="backSpace" class="btn btn dark" value="<-" onclick="deleteChar(this.form.display)">
+
+       <input type="button" id="cos" class="btn btn dark" value="cos" onclick="display.value=Math.cos(display.value)">
+
+       <input type="button" id="sin" class="btn btn dark" value="sin" onclick="display.value=Math.sin(display.value)"> <br>
+       <br>
+
+       <input type="button" id="sqrt" class="btn btn dark" value="&radic;" onclick="display.value=Math.sqrt(display.value)">
+
+       <input type="button" id="tan" class="btn btn dark" value="tan" onclick="display.value=Math.tan(display.value)">
+
+       <input type="button" id="openpara" class="btn btn dark" value="(" onclick="runOpenPara()">
+
+       <input type="button" id="closepara" class="btn btn dark" value=")" onclick="runClosePara()"><br>
+
+       <br>
+
+       <input type="button" id="log" class="btn btn dark" value="log" onclick="display.value=Math.log(display.value)">
+
+       <input type="button" id="exp" class="btn btn dark" value="EXP" onclick="display.value=Math.exp(display.value)">
+
+       <input type="button" id="pi" class="btn btn dark" value="&#960;" onclick="runPi()">
+
+
+       <input type="button" id="ln" class="btn btn dark" value="ln" onclick="runLn()"><br>
+       <br>
+
+       <input type="button" class="btn btn dark" value="1" onclick="run1()">
+
+       <input type="button" class="btn btn dark" value="2" onclick="run2()">
+
+       <input type="button" class="btn btn dark" value="3" onclick="run3()">
+       
+
+       <input type="button" class="btn btn dark" value="4" onclick="run4()"><br>
+        <br>
+
+        <input type="button" class="btn btn dark" value="5" onclick="run5()">
+
+        <input type="button" class="btn btn dark" value="6" onclick="run6()">
+
+        <input type="button" class="btn btn dark" value="7" onclick="run7()">
+
+        <input type="button" class="btn btn dark" value="8" onclick="run8()"><br>
+        <br>
+
+        <input type="button" class="btn btn dark" value="9" onclick="run9()">
+
+        <input type="button" class="btn btn dark" value="0" onclick="run0()">
+
+         <input type="button" id="plus" class="btn btn dark" value="+" onclick="runPlus()">
+
+          <input type="button" id="minus" class="btn btn dark" value="-" onclick="runMinus()"><br>
+          <br>
+
+           <input type="button" id="divide" class="btn btn dark" value="/" onclick="runDivide()">
+
+            <input type="button" id="" class="btn btn dark" value="x&#94;" onclick="display.value=Math.power(display.value)">
+
+             <input type="button" id="multiply" class="btn btn dark" value="*" onclick="runMultiply()">
+
+              <input type="button"  class="btn btn dark" value="=" onclick="runEquals()">
+
+     </form>    		
+ </div>
+</div>
+</div>
+
+<script>
+
+
+function runClearMenu(){
+	document.calculator.display.value += ""
+};
+
+function deleteChar(input) {
+	input.value = input.value.substring(0, input.value.length - 1)
+}
+
+function Cos(form) {
+	form.display.value = Math.cos(form.display.value);
+}
+
+function sin (form) {
+	form.display.value = Math.sin(form.display.value);
+	
+}
+
+function sqrt (form) {
+	form.display.value = Math.sqrt(form.display.value);
+};
+
+function tan (form) {
+	form.display.value = Math.tan(form.display.value);
+};
+
+function runOpenPara(){
+	document.calculator.display.value += "("
+};
+
+
+function runClosePara(){
+	document.calculator.display.value += ")"
+};
+
+
+function log (form) {
+	form.display.value = Math.log(form.display.value);
+}
+
+function exp(form) {
+	form.display.value = Math.exp(form.display.value);
+}
+
+function runPi(){
+	document.calculator.display.value += "3.141"
+};
+
+function runLn(){
+	document.calculator.display.value += "0.693"
+};
+function run1(){
+	document.calculator.display.value += "1"
+};
+
+function run2(){
+	document.calculator.display.value += "2"
+};
+function run3(){
+	document.calculator.display.value += "3"
+};
+function run4(){
+	document.calculator.display.value += "4"
+};
+function run5(){
+	document.calculator.display.value += "5"
+};
+function run6(){
+	document.calculator.display.value += "6"
+};
+function run7(){
+	document.calculator.display.value += "7"
+};
+function run8(){
+	document.calculator.display.value += "8"
+};
+function run9(){
+	document.calculator.display.value += "9"
+};
+function run0(){
+	document.calculator.display.value += "0"
+};
+function runPlus(){
+	document.calculator.display.value += "+"
+};
+function runMinus(){
+	document.calculator.display.value += "-"
+};
+
+function runDivide(){
+	document.calculator.display.value += "/"
+};
+
+function runPower_Function(){
+	document.calculator.display.value += "x^y"
+};
+
+function runMultiply(){
+	document.calculator.display.value += "*"
+};
+
+function runEquals() {
+	var equals = eval (document.calculator.display.value)
+	document.calculator.display.value = equals;
+	}
+
+
+	
+
+	
+</script>
